@@ -12,6 +12,6 @@ import dmacc.beans.Phone;
  */
 
 @Repository
-public interface PhoneRepository  extends JpaRepository<Phone, Long> { } {
+public interface PhoneRepository  extends JpaRepository<Phone, Long> { } 
 
-}
+

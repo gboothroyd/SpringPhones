@@ -14,36 +14,37 @@ import dmacc.beans.Phone;
 import dmacc.controller.BeanConfiguration;
 import dmacc.repository.PhoneRepository;
 @SpringBootApplication
-public class SpringPhonesApplication implements CommandLineRunner{ 
+public class SpringPhonesApplication{ 
 public static void main(String[] args) {
 	SpringApplication.run(SpringPhonesApplication.class, args);
 }
+}
 
-@Autowired
-PhoneRepository repo;
+//@Autowired
+//PhoneRepository repo;
 
-@Override
-public void run(String... args) throws Exception {
+//@Override
+//public void run(String... args) throws Exception {
 // TODO Auto-generated method stub
 
-ApplicationContext appContext = new AnnotationConfigApplicationContext(BeanConfiguration.class);
+//ApplicationContext appContext = new AnnotationConfigApplicationContext(BeanConfiguration.class);
 
 
-Phone p = appContext.getBean("phone", Phone.class);
+//Phone p = appContext.getBean("phone", Phone.class);
 
-p.setOperatingSystem("IOS");
-repo.save(p);
+//p.setOperatingSystem("IOS");
+//repo.save(p);
 
-Phone ph = new Phone("Samsung Galaxy", "Blue", "Android");
-repo.save(ph);
+//Phone ph = new Phone("Samsung Galaxy", "Blue", "Android");
+//repo.save(ph);
 
-List<Phone> allMyPhones = repo.findAll();
+//List<Phone> allMyPhones = repo.findAll();
 
-for(Phone phone: allMyPhones) {
-System.out.println(phone.toString());
+//for(Phone phone: allMyPhones) {
+//System.out.println(phone.toString());
 
 
-}
-((AbstractApplicationContext) appContext).close();
-}
-}
+//}
+
+
+

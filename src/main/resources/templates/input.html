@@ -3,9 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert New Phone</title>
+<script type = "text/javascript">
+         function validate() {
+             
+             if( myForm.name.value == "" ) {
+                alert( "Please provide your name!" );
+               myForm.name.focus() ;
+                return false;
+             }
+             if( myForm.color.value == "" ) {
+                alert( "Please provide your color!" );
+               myForm.color.focus() ;
+                return false;
+             }
+             if( myForm.operatingSystem.value == "") {
+                
+                alert( "Please provide an operating system." );
+                myForm.operatingSystem.focus() ;
+                return false;
+             }
+             return( true );
+          }
+         </script>
 </head>
 <body>
-<form th:object="${newPhone}" th:action="@{/update/{id}(id=${newPhone.id})}" method=POST>
+<form name=myForm th:object="${newPhone}" th:action="@{/update/{id}(id=${newPhone.id})}" method=POST onsubmit = "return(validate());">
 Name: <input name="name" size="20" th:field="*{name}"> <br />
 Color: <input name="color" size="10" th:field="*{color}"><br />
 Operating System: <input name="operatingSystem" size="20" th:field="*{operatingSystem}"><br />
